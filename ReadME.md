@@ -1,28 +1,28 @@
-###image `ubuntu_22.04_CUDA12.1_py3.10_DGL_source_modified_sampler` use the modified dgl sampler      ###
+<!-- ###image `ubuntu_22.04_CUDA12.1_py3.10_DGL_source_modified_sampler` use the modified dgl sampler      ### -->
 
 # Install DGL from source
-cd
-git clone --recurse-submodules https://github.com/dmlc/dgl.git
-cd dgl/
-du -h     1.1GB
+cd  
+git clone --recurse-submodules https://github.com/dmlc/dgl.git  
+cd dgl/  
+du -h     1.1GB  
 
 
 # CUDA build
-mkdir build
-cd build
-cmake -DUSE_CUDA=ON ..
-make -j120
+mkdir build  
+cd build  
+cmake -DUSE_CUDA=ON ..  
+make -j120  
 
-cd ../python
-sudo python3 setup.py install
-python setup.py build_ext --inplace
-
-alias python='python3'
-source ~/.bashrc
-
+cd ../python  
+sudo python3 setup.py install  
+python setup.py build_ext --inplace  
+  
+alias python='python3'  
+source ~/.bashrc  
+  
 Then Modify 10 files     
 
-10 files are different with the original dgl  
+10 files are different with the original dgl    
 ~~~
 
 `Dgl/include/dgl/random.h​`  
